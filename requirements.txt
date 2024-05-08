@@ -1,0 +1,11 @@
+# For the web app
+beautifulsoup4==4.12.3
+
+# For the web scraping
+requests==2.31.0
+
+#for the web scraping
+lxml==4.9.1
+
+#For planning the scraping
+schedule==1.2.1
