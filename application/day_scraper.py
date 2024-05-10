@@ -1,6 +1,6 @@
 import schedule
 import time
-from main import scrape_product
+from application.scrape_product.autoliga import scrape_product
 
 
 def start_scrape():
@@ -15,7 +15,7 @@ def start_scrape():
         print("Parsing complete.")
 
 
-schedule.every().day.at("15:00z").do(start_scrape)
+schedule.every().day.at("08:00").do(start_scrape)
 
 while True:
     schedule.run_pending()
