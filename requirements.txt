@@ -5,7 +5,7 @@ beautifulsoup4==4.12.3
 requests==2.31.0
 
 #for the web scraping
-lxml==4.9.1
+lxml==5.2.1
 
 #For planning the scraping
 schedule==1.2.1
