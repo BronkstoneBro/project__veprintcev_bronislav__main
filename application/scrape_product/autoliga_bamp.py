@@ -104,3 +104,6 @@ if data := scrape_product(url):
     save_to_json(data, folder_path, url)
 else:
     logger.error("Данные не были сохранены из-за ошибки.")
+
+
+# ALL this description for me and my education
