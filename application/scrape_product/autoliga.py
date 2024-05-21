@@ -22,7 +22,7 @@ def scrape_product(url):
     return None
 
 
-url = 'https://autoliga.net.ua/catalog/volkswagen/-tiguan-ii-15-17/-disk-tormoznoy-zadniy/1/'
+url = 'https://autoliga.net.ua/catalog/volkswagen/-tiguan-ii-15-17/-bamper-peredniy/1/'
 
 if data := scrape_product(url):
     folder_path = '../../import_json'
