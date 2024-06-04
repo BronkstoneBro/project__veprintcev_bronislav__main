@@ -1,6 +1,6 @@
 import schedule
 import time
-from application.scrape_product.autoliga import scrape_product
+from application.scrape_product.autoliga_bamp import scrape_product
 
 
 def start_scrape():
