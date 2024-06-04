@@ -1,5 +1,5 @@
 import re
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, TypeAlias
 from bs4 import BeautifulSoup
 import requests
 import logging
@@ -27,8 +27,10 @@ def scrape_product(url: str) -> Optional[List[Dict[str, str]]]:  # Optional - э
         logger.error(f"Ошибка при обработке HTML: {e}")
         return None
 
+ITEM: TypeAlias = Dict[str, str]
+ITEMS: TypeAlias = List[ITEM]
 
-def parse_html(html: str) -> Optional[List[Dict[str, str]]]:
+def parse_html(html: str) -> ITEMS|None:
     soup = BeautifulSoup(html, 'lxml')
     catalog_container = soup.find('div', class_='content-wrapper-items show-next--white')
     if not catalog_container:
@@ -61,8 +63,8 @@ def extract_product_data(product_items, product_prices, product_images, product_
             data.append({
                 'name': product_name,
                 'price': price_in_hryvnia,
-                'product_url': product_url,
-                'image_url': image_url
+                'url': product_url,
+                'image': image_url
             })
         else:
             logger.warning(f"Не удалось извлечь цену для товара: {name.text.strip()}")
